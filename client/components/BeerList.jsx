@@ -1,22 +1,18 @@
 import React, { Fragment } from 'react'
+import BeerListItem from './BeerListItem'
 
 export default function BeerList(props) {
   const { beers } = props
   return (
     <Fragment>
-      {beers.map(beer => {
-        return (
-          <div className="beer" key={beer.id}>
-            <p className="name">{beer.name}</p>
-            <p className="description">A {beer.style} from {beer.brewery}y</p>
-            <p>
-              <span className="country">{beer.country}</span>
-              <span className="abv">{beer.abv}</span>
-              <a href="/designs/cart.html" className="cart-link">Add to cart</a>
-            </p>
-          </div >
-        )
-      })}
+      <div>
+        <p className="welcome">Welcome! Please select from our delicious selection and don't hesitate to let us know if we can answer any of your questions.</p>
+
+        <div>
+          {beers.map(beer => <BeerListItem beer={beer} key={beer.id} />)}
+        </div>
+      </div>
+
 
     </Fragment>
   )
