@@ -1,4 +1,5 @@
 import React from 'react'
+import CartListItem from './CartListItem'
 
 export default function CartList({ cart }) {
   return (
