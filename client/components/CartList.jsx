@@ -13,7 +13,7 @@ export default function CartList({ cart }) {
       </thead>
 
       <tbody>
-        {cart.map(item => <CartListItem beer={item} />)}
+        {cart.map(item => <CartListItem key={item.id} beer={item} />)}
       </tbody>
     </table>
   )

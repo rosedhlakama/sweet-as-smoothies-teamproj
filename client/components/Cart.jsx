@@ -5,10 +5,6 @@ import CartList from './CartList'
 import { navigate } from '../actions'
 
 class Cart extends Component {
-  state = {
-    cart: []
-  }
-
   navigateToListing = () => {
     this.props.dispatch(navigate('listing'))
   }
@@ -18,7 +14,7 @@ class Cart extends Component {
       <div className='cart'>
         <p className="welcome">Thirsty? Sweet! You're one step closer to a quenching.</p>
 
-        <CartList cart={this.state.cart} />
+        <CartList cart={this.props.cart} />
 
         <p className="actions">
           <button onClick={this.navigateToListing}>Continue shopping</button>
@@ -30,4 +26,10 @@ class Cart extends Component {
   }
 }
 
-export default connect()(Cart)
+function mapStateToProps({ cart }) {
+  return {
+    cart
+  }
+}
+
+export default connect(mapStateToProps)(Cart)
