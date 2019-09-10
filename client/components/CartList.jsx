@@ -1,7 +1,8 @@
 import React from 'react'
 import CartListItem from './CartListItem'
 
-export default function CartList({ cart }) {
+export default function CartList(props) {
+  const { cart } = props
   return (
     <table>
       <thead>
@@ -13,7 +14,7 @@ export default function CartList({ cart }) {
       </thead>
 
       <tbody>
-        {cart.map(item => <CartListItem key={item.id} beer={item} />)}
+        {cart.map(item => <CartListItem key={item.id} beer={item} updateQuantity={props.updateQuantity} />)}
       </tbody>
     </table>
   )
