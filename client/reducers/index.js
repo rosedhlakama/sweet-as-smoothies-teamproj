@@ -1,7 +1,7 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 
-// import otherReducer from './other-reducer'
+import navigationReducer from './navigation'
 
 export default combineReducers({
-  // otherReducer
+  navigation: navigationReducer
 })

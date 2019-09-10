@@ -1,18 +1,30 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
 import Header from './Header'
 import Listing from './Listing'
 import Cart from './Cart'
 
+
 class App extends Component {
+
   render() {
+    const { navigation } = this.props
+
     return (
       <div className='app'>
         <Header />
-        {/* <Listing /> */}
-        <Cart />
+        {navigation === 'cart' && <Cart />}
+        {navigation === 'listing' && <Listing />}
       </div>
     )
   }
 }
 
-export default App
+function mapStateToProps({ navigation }) {
+  return {
+    navigation
+  }
+}
+
+export default connect(mapStateToProps)(App)
