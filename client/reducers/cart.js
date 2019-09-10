@@ -10,18 +10,14 @@ export default function cartReducer(state = [], action) {
         return state.map((item, i) => index === i ? { ...item, quantity: item.quantity + 1 } : item
         )
       }
-
-      // if (state.indexOf(id) !== -1) {
-      //   return [...state, { id, name, quantity: 1 }]
-      // }
-      // return state.map(item => console.log(item.id))
-      //  else {
-      //   return [...state, { id: action.id, name: action.name, quantity: 1 }]
-      // }
       break
 
     case 'REMOVE_FROM_CART':
       return state.filter(item => item.id != action.id)
+      break
+
+    case 'UPDATE_QUANTITIES':
+      return action.cart
       break
 
     default:

@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { navigate, addToCart } from '../actions'
 
 function BeerListItem(props) {
+  const { beer } = props
 
   const handleAdd = (id, name) => {
     navigateToCart()
@@ -14,7 +15,6 @@ function BeerListItem(props) {
     props.dispatch(navigate('cart'))
   }
 
-  const { beer } = props
   return (
     <div className="beer">
       <p className="name">{beer.name}</p>
