@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
-import CartList from './CartList'
+import { connect } from 'react-redux'
 
-export default class Cart extends Component {
+import CartList from './CartList'
+import { navigate } from '../actions'
+
+class Cart extends Component {
   state = {
     cart: []
+  }
+
+  navigateToListing = () => {
+    this.props.dispatch(navigate('listing'))
   }
 
   render() {
@@ -14,7 +21,7 @@ export default class Cart extends Component {
         <CartList cart={this.state.cart} />
 
         <p className="actions">
-          <a href="/designs/listing.html">Continue shopping</a>
+          <button onClick={this.navigateToListing}>Continue shopping</button>
           <button>Update</button>
           <button className="button-primary">Checkout</button>
         </p>
@@ -22,3 +29,5 @@ export default class Cart extends Component {
     )
   }
 }
+
+export default connect()(Cart)

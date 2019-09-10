@@ -5,7 +5,7 @@ import { navigate } from '../actions'
 
 function BeerListItem(props) {
 
-  const handleAdd = () => {
+  const navigateToCart = () => {
     props.dispatch(navigate('cart'))
   }
 
@@ -17,7 +17,7 @@ function BeerListItem(props) {
       <p>
         <span className="country">{beer.country}</span>
         <span className="abv">{beer.abv} abv</span>
-        <button className="cart-link" onClick={handleAdd}>Add to cart</button>
+        <button className="cart-link" onClick={navigateToCart}>Add to cart</button>
       </p>
     </div >
   )
