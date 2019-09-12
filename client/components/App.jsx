@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Header from './Header'
 import Listing from './Listing'
 import Cart from './Cart'
+import Sugar from './Sugar'
 
 
 class App extends Component {
