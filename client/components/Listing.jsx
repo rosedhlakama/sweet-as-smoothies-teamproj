@@ -1,20 +1,38 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import BeerList from './BeerList'
-import data from '../../data/beers'
+import { fetchFruits } from '../actions'
 
-export default class Listing extends Component {
-  state = {
-    beers: data.beers
+class Listing extends Component {
+  constructor(props) {
+    super()
+    this.state = {
+      fruits: props.fruits
+    }
+  }
+
+  componentDidMount() {
+    this.props.dispatch(fetchFruits())
+  }
+
+  componentWillReceiveProps({ fruits }) {
+    this.setState({ fruits })
   }
 
   render() {
-    const { beers } = this.state
-
     return (
       <div>
-        <BeerList beers={beers} />
+        <BeerList fruits={this.state.fruits} />
       </div>
     )
   }
 }
+
+function mapStateToProps({ fruits }) {
+  return {
+    fruits
+  }
+}
+
+export default connect(mapStateToProps)(Listing)
