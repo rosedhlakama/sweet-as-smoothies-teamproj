@@ -25,14 +25,14 @@ class Cart extends Component {
   render() {
     return (
       <div className='cart'>
-        <p className="welcome">Thirsty? Sweet! You're one step closer to a quenching.</p>
+        <p className="welcome">Thirsty? Sweet! You're one step closer to a quenching smoothie.</p>
 
         <CartList cart={this.props.cart} updateQuantity={updateQuantities} />
 
         <p className="actions">
-          <button onClick={this.navigateToListing}>Continue shopping</button>
+          <button onClick={this.navigateToListing}>Add more fruit</button>
           <button onClick={() => this.props.dispatch(updateQuantities(this.this.state.cart))}>Update</button>
-          <button className="button-primary">Checkout</button>
+          <button className="button-primary">Blend it up</button>
         </p>
       </div>
     )
