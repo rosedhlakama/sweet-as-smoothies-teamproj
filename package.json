@@ -27,6 +27,7 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.0",
+    "@fortawesome/fontawesome-free": "^5.10.2",
     "babel-loader": "^8.0.5",
     "nodemon": "^1.18.11",
     "react": "^16.8.6",
