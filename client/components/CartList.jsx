@@ -7,7 +7,7 @@ export default function CartList(props) {
     <table>
       <thead>
         <tr>
-          <th>Beer</th>
+          <th>Fruit</th>
           <th>Quantity</th>
           <th>Remove</th>
         </tr>
