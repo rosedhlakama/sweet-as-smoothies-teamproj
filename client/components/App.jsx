@@ -16,6 +16,7 @@ class App extends Component {
         <Header />
         {navigation === 'cart' && <Cart />}
         {navigation === 'listing' && <Listing />}
+        {navigation === 'sugar' && <Sugar />}
       </div>
     )
   }
