@@ -4,19 +4,15 @@ import { connect } from 'react-redux'
 import CartList from './CartList'
 
 class Sugar extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      cart: props.cart
-    }
-  }
+  
 
   render() {
     return (
       <div className='sugar'>
-        output goes here
+        <p>output goes here</p>
       </div>
     )
   }
 }
+
+export default connect()(Sugar)
