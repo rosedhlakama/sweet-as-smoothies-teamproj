@@ -1,3 +1,5 @@
+import request from 'superagent'
+
 export const navigate = (navigation) => {
   return {
     type: 'NAVIGATE',
@@ -24,5 +26,22 @@ export const updateQuantities = (cart) => {
   return {
     type: 'UPDATE_QUANTITIES',
     cart
+  }
+}
+
+export const receiveFruits = (fruits) => {
+  return {
+    type: 'RECEIVE_FRUITS',
+    fruits
+  }
+}
+
+export function fetchFruits() {
+  return (dispatch) => {
+    return request
+      .get(`/api/v1/fruits`)
+      .then(res => {
+        dispatch(receiveFruits(JSON.parse(res.text)))
+      })
   }
 }
