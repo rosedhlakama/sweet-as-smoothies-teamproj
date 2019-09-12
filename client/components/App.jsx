@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Blending from './Blending'
 
 import Header from './Header'
 import Listing from './Listing'
@@ -10,7 +11,7 @@ import Sugar from './Sugar'
 class App extends Component {
 
   render() {
-    const { navigation } = this.props
+    const { navigation, waiting } = this.props
 
     return (
       <div className='app'>
@@ -18,14 +19,16 @@ class App extends Component {
         {navigation === 'cart' && <Cart />}
         {navigation === 'listing' && <Listing />}
         {navigation === 'sugar' && <Sugar />}
+        {waiting && <Blending />}
+      
       </div>
     )
   }
 }
 
-function mapStateToProps({ navigation }) {
+function mapStateToProps({ navigation, waiting }) {
   return {
-    navigation
+    navigation, waiting:true
   }
 }
 

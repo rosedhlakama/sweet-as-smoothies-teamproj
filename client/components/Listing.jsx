@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import BeerList from './BeerList'
+import FruitList from './FruitList'
 import { fetchFruits } from '../actions'
 
 class Listing extends Component {
@@ -23,7 +23,7 @@ class Listing extends Component {
   render() {
     return (
       <div>
-        <BeerList fruits={this.state.fruits} />
+        <FruitList fruits={this.state.fruits} />
       </div>
     )
   }
