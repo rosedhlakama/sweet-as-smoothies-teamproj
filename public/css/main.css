@@ -55,7 +55,15 @@ h1 {
 .cart table {
   width: 100%;
 }
+.trash{
+  border-radius: 50%; 
+  background-color: #FFFFFF;
+  color: #DC381F;
 
+}
+.trash:hover{
+  color: #FDD017;
+}
 .cart .update-input {
   width: 40px;
   text-align: center;
