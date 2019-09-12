@@ -21,9 +21,8 @@ class Cart extends Component {
     this.props.dispatch(navigate('sugar'))
   }
 
-  updateQuantity = (id, quantity) => {
-    console.log('hey')
-    this.state.cart.map(item => item.id === id ? item.quantity = quantity : item)
+  updateQuantity = (id, quantity, sugarContent) => {
+    this.state.cart.map(item => item.id === id ? (item.quantity = quantity, item.sugarContent = sugarContent) : item)
   }
 
   render() {
