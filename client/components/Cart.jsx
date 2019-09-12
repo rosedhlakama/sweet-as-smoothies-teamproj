@@ -17,6 +17,10 @@ class Cart extends Component {
     this.props.dispatch(navigate('listing'))
   }
 
+  navigateToSugar = () => {
+    this.props.dispatch(navigate('sugar'))
+  }
+
   updateQuantity = (id, quantity) => {
     console.log('hey')
     this.state.cart.map(item => item.id === id ? item.quantity = quantity : item)
@@ -32,7 +36,7 @@ class Cart extends Component {
         <p className="actions">
           <button onClick={this.navigateToListing}>Add more fruit</button>
           <button onClick={() => this.props.dispatch(updateQuantities(this.this.state.cart))}>Update</button>
-          <button className="button-primary">Blend it up</button>
+          <button onClick={this.navigateToSugar} className="button-primary">Blend it up</button>
         </p>
       </div>
     )
