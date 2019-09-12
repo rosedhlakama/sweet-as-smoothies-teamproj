@@ -26,4 +26,10 @@ class Sugar extends Component {
   }
 }
 
-export default connect()(Sugar)
+function mapStateToProps({ cart }) {
+  return {
+    cart
+  }
+}
+
+export default connect(mapStateToProps)(Sugar)
