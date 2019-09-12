@@ -6,8 +6,6 @@ export default function BeerList(props) {
 
   return (
     <div>
-      
-
       <div>
         {fruits.map(fruit => <FruitListItem fruit={fruit} key={fruit.id} />)}
       </div>

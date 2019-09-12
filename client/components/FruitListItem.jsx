@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 import { navigate, addToCart } from '../actions'
 
 function BeerListItem(props) {
-  const { fruit } = props
+  const { name, genus, family, nutritions, id } = props.fruit
 
-  const handleAdd = (id, name) => {
+  const handleAdd = (id, name, sugarContent) => {
     navigateToCart()
-    props.dispatch(addToCart(id, name))
+    props.dispatch(addToCart(id, name, sugarContent))
   }
 
   function navigateToCart() {
@@ -17,12 +17,12 @@ function BeerListItem(props) {
 
   return (
     <div className="beer">
-      <p className="name">{fruit.name}</p>
-      <p className="description">Genus: {fruit.genus}</p>
+      <p className="name">{name}</p>
+      <p className="description">Genus: {genus}</p>
       <p>
-        <span className="country">Family: {fruit.family}</span>
-        <span className="abv">Sugar content: {fruit.nutritions.sugar}</span>
-        <button className="cart-link" onClick={() => handleAdd(fruit.id, fruit.name)}>Add to cart</button>
+        <span className="country">Family: {family}</span>
+        <span className="abv">Sugar content: {nutritions.sugar}</span>
+        <button className="cart-link" onClick={() => handleAdd(id, name, nutritions.sugar)}>Add to cart</button>
       </p>
     </div >
   )
