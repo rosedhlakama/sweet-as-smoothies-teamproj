@@ -9,7 +9,9 @@ class Sugar extends Component {
   render() {
     return (
       <div className='sugar'>
-        <p>output goes here</p>
+        <h2>Smoothie Sugar</h2>
+        <p>Sugar content per 100mls of smoothie</p>
+        <p>Sugar: </p>
       </div>
     )
   }
