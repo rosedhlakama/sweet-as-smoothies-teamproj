@@ -16,13 +16,13 @@ function BeerListItem(props) {
   }
 
   return (
-    <div className="beer">
-      <p className="name">{name}</p>
-      <p className="description">Genus: {genus}</p>
+    <div className="fruit">
+      <p className="name">{fruit.name}</p>
+      <p className="genus">Genus: {fruit.genus}</p>
       <p>
-        <span className="country">Family: {family}</span>
-        <span className="abv">Sugar content: {nutritions.sugar}</span>
-        <button className="cart-link" onClick={() => handleAdd(id, name, nutritions.sugar)}>Add to cart</button>
+        <span className="family">Family: {fruit.family}</span>
+        <span className="sugar">Sugar content: {fruit.nutritions.sugar}</span>
+        <button className="cart-link" onClick={() => handleAdd(fruit.id, fruit.name)}>Add to cart</button>
       </p>
     </div >
   )
