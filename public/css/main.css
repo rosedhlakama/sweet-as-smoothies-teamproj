@@ -11,9 +11,12 @@ h1 {
 .header {
   text-align: center;
 }
+.header:hover{
+ cursor: pointer;
+}
 .header-text {
   margin-bottom: 0;
-  
+
 }
 .apple1 {
   color: #4cc417;
