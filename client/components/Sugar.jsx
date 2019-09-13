@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import Blending from './Blending'
-
 class Sugar extends Component {
   constructor(props) {
     super(props)
