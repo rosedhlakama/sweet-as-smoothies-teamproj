@@ -24,15 +24,20 @@ class Sugar extends Component {
   render() {
     return (
       <div className='sugar'>
-        <h2>Smoothie Sugar</h2>
-        <p>Sugar content per 100mls of smoothie</p>
-        <p>Sugar: {this.sugarContent()}</p>
-
-        <p className="actions">
+        <div className='sugar-text'>
+          <h2>Smoothie Sugar</h2>
+          <p>Sugar content per 100mls of smoothie</p>
+          <p className='actions'>
           <button onClick={this.navigateToListing}>Home</button>
-        </p>.
+        </p>
+        </div>
+        
+        
+        .<div className='sugar-jar'>
+          <div className='sugar-text'>{this.sugarContent()}g</div>
+        </div>
       </div>
-    )
+    );
   }
 }
 
