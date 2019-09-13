@@ -11,12 +11,11 @@ h1 {
 .header {
   text-align: center;
 }
-.header:hover{
- cursor: pointer;
+.header:hover {
+  cursor: pointer;
 }
 .header-text {
   margin-bottom: 0;
-
 }
 .apple1 {
   color: #4cc417;
@@ -24,16 +23,15 @@ h1 {
 .tri-apple {
   margin-top: 0;
   font-size: 60px;
-  
 }
 .apple1 {
   color: #52d017;
 }
-.apple2{
-  color: #4CC552;
+.apple2 {
+  color: #4cc552;
 }
-.apple3{
-color: #4cc417;
+.apple3 {
+  color: #4cc417;
 }
 .welcome {
   margin-bottom: 40px;
@@ -95,6 +93,31 @@ color: #4cc417;
 .cart .actions {
   display: flex;
   justify-content: space-between;
+}
+.sugar {
+  display: flex;
+  width: 55%;
+  margin: auto;
+}
+.sugar-jar {
+  border-radius: 50%;
+  min-height: 200px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dc381f;
+  color: #FFFFFF;
+  font-size: 60px;
+}
+
+.sugar-text {
+  line-height: 0;
+  margin-top: -0.5em;
+  text-align: center;
+  width: 70%;
+  vertical-align: center;
+  margin-right: 6%;
 }
 
 /*oscilating blender*/
