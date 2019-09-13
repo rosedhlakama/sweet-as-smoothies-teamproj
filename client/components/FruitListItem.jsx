@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { navigate, addToCart } from '../actions'
 
-function BeerListItem(props) {
+function FruitListItem(props) {
   const { name, genus, family, nutritions, id } = props.fruit
 
   const handleAdd = (id, name, sugarContent) => {
@@ -28,4 +28,4 @@ function BeerListItem(props) {
   )
 }
 
-export default connect()(BeerListItem)
+export default connect()(FruitListItem)

@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 import CartList from './CartList'
 import { navigate, updateQuantities } from '../actions'
-
 class Cart extends Component {
   constructor(props) {
     super(props)

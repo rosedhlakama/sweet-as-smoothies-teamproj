@@ -1,7 +1,7 @@
 import React from 'react'
 import FruitListItem from './FruitListItem'
 
-export default function BeerList(props) {
+export default function FruitList(props) {
   const { fruits } = props
 
   return (
