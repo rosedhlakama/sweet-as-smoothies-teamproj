@@ -32,21 +32,21 @@ class Sugar extends Component {
     else {
       return (
         <div className='sugar'>
-           <div className='sugar-text'>
-             <h2>Smoothie Sugar</h2>
-          <p>Sugar content per 100mls of smoothie</p>
-         
-          <p className="actions">
-            <Link to={'/'}>
-              <button>Home</button>
-            </Link>
-          </p>
-              </div>
-       <div className='sugar-jar'>
-          <div className='sugar-text'>{this.sugarContent()}g</div>
+          <div className='sugar-text'>
+            <h2>Smoothie Sugar</h2>
+            <p>Sugar content per 100mls of smoothie</p>
+
+            <p className='actions'>
+              <Link to={'/'}>
+                <button>Home</button>
+              </Link>
+            </p>
+          </div>
+          <div className='sugar-jar bounce-top'>
+            <div className='sugar-text'>{this.sugarContent()}g</div>
+          </div>
         </div>
-      </div>
-      )
+      );
     }
   }
 }
