@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Blending from './Blending'
 
 import Header from './Header'
 import Listing from './Listing'
 import Cart from './Cart'
 import Sugar from './Sugar'
 class App extends Component {
-
   render() {
     const { navigation } = this.props
 
@@ -17,7 +15,6 @@ class App extends Component {
         {navigation === 'cart' && <Cart />}
         {navigation === 'listing' && <Listing />}
         {navigation === 'sugar' && <Sugar />}
-        {navigation === 'blending' && <Blending />}
       </div>
     )
   }
