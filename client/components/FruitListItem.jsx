@@ -22,7 +22,7 @@ function FruitListItem(props) {
       <p>
         <span className="family">Family: {family}</span>
         <span className="sugar">Sugar content: {nutritions.sugar}</span>
-        <button className="cart-link" onClick={() => handleAdd(id, name)}>Add to cart</button>
+        <button className="cart-link" onClick={() => handleAdd(id, name,nutritions.sugar)}>Add to cart</button>
       </p>
     </div >
   )
