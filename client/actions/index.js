@@ -7,11 +7,12 @@ export const navigate = (navigation) => {
   }
 }
 
-export const addToCart = (id, name) => {
+export const addToCart = (id, name, sugarContent) => {
   return {
     type: 'ADD_TO_CART',
     id,
-    name
+    name,
+    sugarContent
   }
 }
 
