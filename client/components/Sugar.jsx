@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import CartList from './CartList'
-
 import { navigate } from '../actions'
 
 class Sugar extends Component {
