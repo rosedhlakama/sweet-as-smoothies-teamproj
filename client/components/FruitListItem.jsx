@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import { navigate, addToCart } from '../actions'
 
@@ -7,7 +8,7 @@ function FruitListItem(props) {
   const { name, genus, family, nutritions, id } = props.fruit
 
   const handleAdd = (id, name, sugarContent) => {
-    navigateToCart()
+    // navigateToCart()
     props.dispatch(addToCart(id, name, sugarContent))
   }
 
@@ -22,7 +23,9 @@ function FruitListItem(props) {
       <p>
         <span className="family">Family: {family}</span>
         <span className="sugar">Sugar content: {nutritions.sugar}</span>
-        <button className="cart-link" onClick={() => handleAdd(id, name)}>Add to cart</button>
+        <Link to={'/cart'}><button className="cart-link" onClick={() => handleAdd(id, name, nutritions.sugar)}>Add to cart</button></Link>
+
+        {/* <button className="cart-link" onClick={() => handleAdd(id, name,nutritions.sugar)}>Add to cart</button> */}
       </p>
     </div >
   )

@@ -1,32 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import Blending from './Blending'
+import { HashRouter as Router, Route } from 'react-router-dom'
 
 import Header from './Header'
 import Listing from './Listing'
 import Cart from './Cart'
 import Sugar from './Sugar'
-class App extends Component {
 
-  render() {
-    const { navigation } = this.props
-
-    return (
+function App() {
+  return (
+    <Router>
       <div className='app'>
         <Header />
-        {navigation === 'cart' && <Cart />}
-        {navigation === 'listing' && <Listing />}
-        {navigation === 'sugar' && <Sugar />}
-        {navigation === 'blending' && <Blending />}
+        <Route exact path="/" component={Listing} />
+        <Route path="/cart" component={Cart} />
+        <Route path="/checkout" component={Sugar} />
       </div>
-    )
-  }
+    </Router >
+  )
 }
 
-function mapStateToProps({ navigation }) {
-  return {
-    navigation
-  }
-}
-
-export default connect(mapStateToProps)(App)
+export default connect()(App)
