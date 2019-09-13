@@ -1,15 +1,12 @@
-import React, {Component} from 'react'
-import {navigate }from '../actions'
+import React from 'react'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
-class Header extends Component {
-  navigateToListing = () => {
-    this.props.dispatch(navigate('listing'))
-  }
-render(){ 
+function Header() {
   return (
-    <header onClick={this.navigateToListing} className='header'>
-      <h1 className='header-text'> Sweet As Smoothies </h1>
+    <Link to={'/'}>
+      <header className='header'>
+        <h1 className='header-text'> Sweet As Smoothies </h1>
       <h1 className='tri-apple'>
         {' '}
         <span className='fa fa-apple-alt apple1'> </span>{' '}
@@ -19,9 +16,9 @@ render(){
       <p className='welcome'>
         In life much like smoothies you get out what you put in.
       </p>
-    </header>
+      </header>
+    </Link >
   );
-}
 }
 
 export default connect()(Header)

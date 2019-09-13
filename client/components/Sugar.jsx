@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import Blending from './Blending'
-import { navigate } from '../actions'
 
 class Sugar extends Component {
   constructor(props) {
@@ -14,10 +14,6 @@ class Sugar extends Component {
 
   componentDidMount() {
     setTimeout(() => this.setState({ isLoading: false }), 2000);
-  }
-
-  navigateToListing = () => {
-    this.props.dispatch(navigate('listing'))
   }
 
   sugarContent = () => {
@@ -40,9 +36,10 @@ class Sugar extends Component {
           <h2>Smoothie Sugar</h2>
           <p>Sugar content per 100mls of smoothie</p>
           <p>Sugar: {this.sugarContent()}</p>
-
           <p className="actions">
-            <button onClick={this.navigateToListing}>Home</button>
+            <Link to={'/'}>
+              <button>Home</button>
+            </Link>
           </p>
         </div>
       )
