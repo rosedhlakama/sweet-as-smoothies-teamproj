@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 const WaitIndicator = (props) => {
   return( 
-  <div>
+  <div className="blending">
     <img className='wait-blending' src='images/blender.png' />
   </div>)
 }
