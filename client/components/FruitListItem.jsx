@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { navigate, addToCart } from '../actions'
 
-function BeerListItem(props) {
+function FruitListItem(props) {
   const { name, genus, family, nutritions, id } = props.fruit
 
   const handleAdd = (id, name, sugarContent) => {
@@ -17,15 +17,15 @@ function BeerListItem(props) {
 
   return (
     <div className="fruit">
-      <p className="name">{fruit.name}</p>
-      <p className="genus">Genus: {fruit.genus}</p>
+      <p className="name">{name}</p>
+      <p className="genus">Genus: {genus}</p>
       <p>
-        <span className="family">Family: {fruit.family}</span>
-        <span className="sugar">Sugar content: {fruit.nutritions.sugar}</span>
-        <button className="cart-link" onClick={() => handleAdd(fruit.id, fruit.name)}>Add to cart</button>
+        <span className="family">Family: {family}</span>
+        <span className="sugar">Sugar content: {nutritions.sugar}</span>
+        <button className="cart-link" onClick={() => handleAdd(id, name)}>Add to cart</button>
       </p>
     </div >
   )
 }
 
-export default connect()(BeerListItem)
+export default connect()(FruitListItem)

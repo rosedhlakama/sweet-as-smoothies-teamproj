@@ -1,9 +1,10 @@
+import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_QUANTITIES } from '../actions'
+
 export default function cartReducer(state = [], action) {
   switch (action.type) {
-    case 'ADD_TO_CART':
+    case ADD_TO_CART:
       const index = state.findIndex(item => item.id === action.id)
 
-      console.log(action.sugarContent)
       if (index === -1) {
         const { id, name, sugarContent } = action
         return [...state, { id, name, sugarContent, quantity: 1 }]
@@ -12,10 +13,10 @@ export default function cartReducer(state = [], action) {
         )
       }
 
-    case 'REMOVE_FROM_CART':
+    case REMOVE_FROM_CART:
       return state.filter(item => item.id != action.id)
 
-    case 'UPDATE_QUANTITIES':
+    case UPDATE_QUANTITIES:
       return action.cart
 
     default:

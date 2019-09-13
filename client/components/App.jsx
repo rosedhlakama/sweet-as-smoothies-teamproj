@@ -6,12 +6,10 @@ import Header from './Header'
 import Listing from './Listing'
 import Cart from './Cart'
 import Sugar from './Sugar'
-
-
 class App extends Component {
 
   render() {
-    const { navigation, waiting } = this.props
+    const { navigation } = this.props
 
     return (
       <div className='app'>
@@ -19,16 +17,15 @@ class App extends Component {
         {navigation === 'cart' && <Cart />}
         {navigation === 'listing' && <Listing />}
         {navigation === 'sugar' && <Sugar />}
-        {waiting && <Blending />}
-      
+        {navigation === 'blending' && <Blending />}
       </div>
     )
   }
 }
 
-function mapStateToProps({ navigation, waiting }) {
+function mapStateToProps({ navigation }) {
   return {
-    navigation, waiting:true
+    navigation
   }
 }
 
