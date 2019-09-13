@@ -14,7 +14,7 @@ export default function CartList(props) {
       </thead>
 
       <tbody>
-        {cart.map(item => <CartListItem key={item.id} beer={item} updateQuantity={props.updateQuantity} />)}
+        {cart.map(item => <CartListItem key={item.id} fruit={item} updateQuantity={props.updateQuantity} />)}
       </tbody>
     </table>
   )
