@@ -16,11 +16,10 @@ class App extends Component {
     return (
       <div className='app'>
         <Header />
-        {navigation === 'cart' && <Cart />}
-        {navigation === 'listing' && <Listing />}
-        {navigation === 'sugar' && <Sugar />}
+        {!waiting && navigation === 'cart' && <Cart />}
+        {!waiting && navigation === 'listing' && <Listing />}
+        {!waiting && navigation === 'sugar' && <Sugar />}
         {waiting && <Blending />}
-      
       </div>
     )
   }
@@ -28,7 +27,7 @@ class App extends Component {
 
 function mapStateToProps({ navigation, waiting }) {
   return {
-    navigation, waiting:true
+    navigation, waiting
   }
 }
 
