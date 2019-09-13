@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import CartList from './CartList'
-import { navigate, updateQuantities } from '../actions'
-
+import { updateQuantities } from '../actions'
 class Cart extends Component {
   constructor(props) {
     super(props)
@@ -13,17 +13,8 @@ class Cart extends Component {
     }
   }
 
-  navigateToListing = () => {
-    this.props.dispatch(navigate('listing'))
-  }
-
-  navigateToSugar = () => {
-    this.props.dispatch(navigate('sugar'))
-  }
-
-  updateQuantity = (id, quantity) => {
-    console.log('hey')
-    this.state.cart.map(item => item.id === id ? item.quantity = quantity : item)
+  updateQuantity = (id, quantity, sugarContent) => {
+    this.state.cart.map(item => item.id === id ? (item.quantity = quantity, item.sugarContent = sugarContent) : item)
   }
 
   render() {
@@ -34,9 +25,9 @@ class Cart extends Component {
         <CartList cart={this.props.cart} updateQuantity={updateQuantities} />
 
         <p className="actions">
-          <button onClick={this.navigateToListing}>Add more fruit</button>
+          <Link to={'/'}><button>Add more fruit</button></Link>
           <button onClick={() => this.props.dispatch(updateQuantities(this.this.state.cart))}>Update</button>
-          <button onClick={this.navigateToSugar} className="button-primary">Blend it up</button>
+          <Link to={'/checkout'}><button className="button-primary">Blend it up</button></Link>
         </p>
       </div>
     )

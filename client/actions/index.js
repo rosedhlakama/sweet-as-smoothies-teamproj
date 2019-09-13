@@ -1,37 +1,36 @@
 import request from 'superagent'
 
-export const navigate = (navigation) => {
-  return {
-    type: 'NAVIGATE',
-    navigation
-  }
-}
+export const ADD_TO_CART = 'ADD_TO_CART'
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
+export const UPDATE_QUANTITIES = 'UPDATE_QUANTITIES'
+export const RECEIVE_FRUITS = 'RECEIVE_FRUITS'
 
-export const addToCart = (id, name) => {
+export const addToCart = (id, name, sugarContent) => {
   return {
-    type: 'ADD_TO_CART',
+    type: ADD_TO_CART,
     id,
-    name
+    name,
+    sugarContent
   }
 }
 
 export const removeFromCart = (id) => {
   return {
-    type: 'REMOVE_FROM_CART',
+    type: REMOVE_FROM_CART,
     id
   }
 }
 
 export const updateQuantities = (cart) => {
   return {
-    type: 'UPDATE_QUANTITIES',
+    type: UPDATE_QUANTITIES,
     cart
   }
 }
 
-export const receiveFruits = (fruits) => {
+const receiveFruits = (fruits) => {
   return {
-    type: 'RECEIVE_FRUITS',
+    type: RECEIVE_FRUITS,
     fruits
   }
 }
